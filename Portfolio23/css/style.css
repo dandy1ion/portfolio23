@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@400;500&family=Play:wght@400;700&family=Sedgwick+Ave+Display&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	border: none;
+	outline: none;
+	scroll-behavior: smooth;
+	font-family: "Play", sans-serif;
+}
+
+:root {
+	--bg-color: #081b29;
+	--second-bg-color: #112e42;
+	--text-color: #ededed;
+	/* --main-color: #00abf0; */
+	--main-color: yellowgreen;
+}
+
+html {
+	font-size: 62.5%;
+	overflow-x: hidden;
+}
+
+body {
+	background: var(--bg-color);
+	color: var(--text-color);
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 2rem 9%;
+	background: transparent;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
+}
+
+.logo {
+	font-size: 3rem;
+	color: var(--text-color);
+	font-weight: 500;
+	margin: 2rem;
+}
+
+.navbar a {
+	font-size: 2.2rem;
+	color: var(--text-color);
+	font-weight: 500;
+	margin-left: 3.5rem;
+	transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+	color: var(--main-color);
+}
+
+#menu-icon {
+	font-size: 3.8rem;
+	color: var(--text-color);
+	cursor: pointer;
+	display: none;
+}
+
+section {
+	min-height: 100%;
+	padding: 10rem 9% 3rem;
+	margin-top: 15rem;
+}
+
+.home {
+	display: flex;
+	align-items: center;
+	padding: 0 9%;
+}
+
+.home-content {
+	max-width: 60rem;
+}
+
+.home-content h1 {
+	font-size: 6rem;
+	font-weight: 700;
+	line-height: 1.5;
+	font-family: "Expletus Sans", cursive;
+}
+
+/* .home-content h1 span {
+	font-family: "Sedgwick Ave Display", cursive;
+	font-size: 6rem;
+	font-weight: 400;
+} */
+
+.home-content h1 span {
+	font-family: "Expletus Sans", cursive;
+}
+
+.home-content .text-animate {
+	position: relative;
+	width: 33rem;
+}
+
+.home-content .text-animate h2 {
+	font-size: 3.5rem;
+	font-weight: 700;
+	color: transparent;
+	-webkit-text-stroke: 0.8px var(--main-color);
+}
+
+.home-content p {
+	font-size: 1.8rem;
+	margin: 3rem 0 5rem;
+}
+
+.btn-box {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	width: 35rem;
+	height: 5rem;
+}
+
+.btn-box .btn {
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 15rem;
+	height: 100%;
+	background: var(--main-color);
+	border: 0.4rem solid var(--main-color);
+	border-radius: 1rem;
+	font-size: 2rem;
+	font-weight: 500;
+	letter-spacing: 0.2rem;
+	color: var(--bg-color);
+	z-index: 1;
+	overflow: hidden;
+	transition: 0.8s;
+}
+
+.btn-box .btn:hover {
+	color: var(--main-color);
+}
+
+.btn-box .btn:nth-child(2) {
+	background: transparent;
+	color: var(--main-color);
+}
+
+.btn-box .btn:nth-child(2):hover {
+	color: var(--bg-color);
+}
+
+.btn-box .btn:nth-child(2)::before {
+	background: var(--main-color);
+}
+
+.btn-box .btn::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background: var(--bg-color);
+	z-index: -1;
+	transition: 0.8s;
+}
+
+.btn-box .btn:hover::before {
+	width: 100%;
+}
+
+.home-links {
+	position: absolute;
+	bottom: 5rem;
+	width: 170px;
+	display: flex;
+	justify-content: center;
+}
+
+.home-links a {
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	background: transparent;
+	border: 0.3rem solid var(--main-color);
+	border-radius: 50%;
+	font-size: 30px;
+	color: var(--main-color);
+}
