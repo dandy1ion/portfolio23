@@ -13,9 +13,8 @@
 
 :root {
 	--bg-color: #081b29;
-	--second-bg-color: #112e42;
+	--second-bg-color: #0f2a3c;
 	--text-color: #ededed;
-	/* --main-color: #00abf0; */
 	--main-color: yellowgreen;
 }
 
@@ -79,6 +78,9 @@ section {
 	display: flex;
 	align-items: center;
 	padding: 0 9%;
+	/*background: url('/imgs/home.jpg') no-repeat;
+	background-size: cover;
+	background-position: center*/
 }
 
 .home-content {
@@ -181,10 +183,11 @@ section {
 
 .home-links {
 	position: absolute;
-	bottom: 5rem;
+	bottom: 3rem;
 	width: 170px;
 	display: flex;
 	justify-content: center;
+	padding-bottom: 10px;
 }
 
 .home-links a {
@@ -199,4 +202,231 @@ section {
 	border-radius: 50%;
 	font-size: 30px;
 	color: var(--main-color);
+	z-index: 1;
+	overflow: hidden;
+	transition: 0.8s;
+	margin: 10px;
+}
+
+.home-links a:hover {
+	color: var(--bg-color);
+}
+
+.home-links a::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background: var(--main-color);
+	z-index: -1;
+	transition: 0.8s;
+}
+
+.home-links a:hover::before {
+	width: 100%;
+}
+
+/*.home-imgHover {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 45%;
+	height: 100%;
+	background: transparent;
+	transition: 3s;
+}
+
+.home-imgHover:hover {
+	background: var(--bg-color);
+	opacity: .8;
+}*/
+
+.about {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 2rem;
+	background: var(--second-bg-color);
+	padding: 6rem;
+}
+
+.heading {
+	font-size: 5rem;
+	margin-bottom: 4rem;
+	text-align: center;
+}
+
+.heading span {
+	color: var(--main-color);
+}
+
+.about-img {
+	position: relative;
+	width: 30rem;
+	height: 30rem;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.about-img img {
+	width: 90%;
+	border-radius: 50%;
+	border: 0.4rem solid var(--main-color);
+}
+
+.about-img .circle-spin {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(0);
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border-top: 0.2rem solid var(--second-bg-color);
+	border-bottom: 0.2rem solid var(--second-bg-color);
+	border-left: 0.2rem solid var(--main-color);
+	border-right: 0.2rem solid var(--main-color);
+}
+
+.about-content {
+	text-align: center;
+}
+
+.about-content h3 {
+	font-size: 2.8rem;
+}
+
+.about-content p {
+	font-size: 1.8rem;
+	margin: 2.5rem 0 3.5rem;
+}
+
+.btn-box.btns {
+	display: inline-block;
+	width: 15rem;
+}
+
+.btn-box.btns a::before {
+	background: var(--second-bg-color);
+}
+
+.education {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	min-height: auto;
+	padding-bottom: 5rem;
+}
+
+.education .education-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5rem;
+}
+
+.education .education-column {
+	flex: 1 1 40rem;
+}
+
+.education-column .title {
+	font-size: 2.5rem;
+	margin: 0 0 1.5rem 2rem;
+}
+
+.education-column .education-box {
+	border-left: 0.3rem solid var(--main-color);
+}
+
+.education-box .education-content {
+	position: relative;
+	padding-left: 1.8rem;
+}
+
+.education-box .education-content::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -1.1rem;
+	width: 2rem;
+	height: 2rem;
+	background: var(--main-color);
+	border-radius: 50%;
+}
+
+.education-content .content {
+	position: relative;
+	padding: 1.5rem;
+	border: 0.3rem solid var(--main-color);
+	border-radius: 0.7rem;
+	margin-bottom: 2.5rem;
+	overflow: hidden;
+}
+
+.education-content .content::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background: var(--second-bg-color);
+	z-index: -1;
+	transition: 0.8s;
+}
+
+.education-content .content:hover::before {
+	width: 100%;
+}
+
+.education-content .content .year {
+	font-size: 1.8rem;
+	color: var(--main-color);
+	padding-bottom: 0.6rem;
+}
+
+.education-content .content .year i {
+	padding-right: 0.6rem;
+}
+
+.education-content .content h3 {
+	font-size: 2rem;
+}
+
+.education-content .content p {
+	font-size: 1.6rem;
+	padding-top: 0.5rem;
+}
+
+.skills-content {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+	align-items: stretch;
+	gap: 6rem;
+	margin-top: 5rem;
+	justify-content: center;
+}
+
+.skills-card {
+	background: var(--second-bg-color);
+	border: 1rem solid var(--main-color);
+	padding: 3rem;
+	border-radius: 1.5rem;
+	font-size: 2rem;
+	font-weight: 500;
+	margin-bottom: 25px;
+}
+
+.skills-head .title {
+	line-height: 2;
+	color: var(--main-color);
+}
+
+.skills-card ul {
+	padding: 0.5rem;
 }
